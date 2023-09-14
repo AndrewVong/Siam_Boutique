@@ -1,46 +1,73 @@
 /* Add emotional triggers to elements */
 .box img {
-    filter: grayscale(100%);
-    transition: filter 0.3s ease-in-out;
-  }
-  
-  .box:hover img {
-    filter: none;
-  }
-  
-  .box p {
-    font-weight: bold;
-    color: #ff0000;
-    text-transform: uppercase;
-    transition: transform 0.3s ease-in-out;
-  }
-  
-  .box:hover p {
-    transform: scale(1.1);
-  }
-  
-  /* Additional styling for emphasis */
-  .carousel-inner img {
-    height: 400px;
-    object-fit: cover;
-  }
-  
-  .featured-items {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: repeat(3, auto);
-    gap: 20px;
-    justify-items: center;
-    align-items: center;
-    text-align: center;
-    margin-top: 30px;
-    color: #ff0000;
-  }
-  
-  .our-featured-products {
-    text-align: center;
-    font-size: 16px;
-    margin-bottom: 20px;
-    color: #666;
-  }
-  
+  filter: grayscale(100%);
+  transition: filter 0.3s ease-in-out;
+}
+
+.box:hover img {
+  filter: none;
+}
+
+.box p {
+  font-weight: bold;
+  color: #ff0000;
+  text-transform: uppercase;
+  transition: transform 0.3s ease-in-out;
+}
+
+.box:hover p {
+  transform: scale(1.1);
+}
+
+/* Additional styling for emphasis */
+.carousel-item img {
+  height: 400px;
+  object-fit: cover;
+}
+
+.feature-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, auto);
+  gap: 20px;
+  justify-items: center;
+  align-items: center;
+  text-align: center;
+  margin-top: 30px;
+  color: #ff0000;
+}
+
+.our-featured-products {
+  text-align: center;
+  font-size: 16px;
+  margin-bottom: 20px;
+  color: #666;
+}
+
+/* Additional design elements and increased contrast */
+.box img {
+  border: 2px solid #444;
+}
+
+.box p {
+  background-color: #ffc0c0;
+  padding: 5px;
+  color: #222;
+}
+
+.carousel-item {
+  background-color: #111;
+  border-radius: 10px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+}
+
+.feature-grid {
+  background-color: #222;
+  padding: 10px;
+}
+
+.our-featured-products {
+  background-color: #222;
+  padding: 10px;
+  color: #fff;
+}
