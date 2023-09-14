@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="keywords"
+      content="autoparts, salbu, audianceparts, car parts,repair"
+    />
+    <meta
+      name="description"
+      content="Audiance Auto Parts has all your favorite car parts at the lowest price in town."
+    />
+
+    <title>AAP | Contact Us</title>
+
+    <link
+      rel="shortcut icon"
+      type="image/png"
+      href="./images/aap-logo.png"
+      sizes="32x32"
+    />
+
+    <!-- Latest compiled and minified CSS -->
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+    />
+    <!-- Optional theme -->
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css"
+    />
+
+    <!-- ================================================bootstrap============================================== -->
+
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+
+    <!-- ======================================================================================================= -->
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@1,900&display=swap"
+      rel="stylesheet"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.css"
+    />
+
+    <!-- ============================================ CSS =========================================================== -->
+
+    <link rel="stylesheet" href="../css/main.css" />
+
+    <link rel="stylesheet" href="../css/contact.css" media="all" />
+
+    <script src="../main.js"></script>
+    <script src="form.js"></script>
+  </head>
+
+  <body>
+    <!-- ======================================================= HEADER ==========================================================-->
+
+    <header class="sticky">
+      <h1 class="logo">
+        <a href="../index.html"
+          ><img
+            src="../images/aap-logo.png"
+            alt="aap-logo"
+            height="95px"
+            width="130px"
+        /></a>
+      </h1>
+
+      <input type="checkbox" id="nav-toggle" class="nav-toggle" />
+
+      <nav>
+        <ul>
+          <li><a href="../index.html">Home</a></li>
+          <li><a href="../products.html">Products</a></li>
+          <li><a href="../about.html">About</a></li>
+          <!--<li><a href="https://audianceparts.blogspot.com/" target="_blank">News</a></li>-->
+          <li>
+            <a href="https://news.audianceparts.com/" target="_blank">News</a>
+          </li>
+          <li>
+            <a href="./contact-us/form.html"
+              ><button type="button" class="btn btn-outline-danger">
+                CONTACT US
+              </button></a
+            >
+          </li>
+        </ul>
+      </nav>
+
+      <!--responsive nav menu-->
+
+      <label for="nav-toggle" class="nav-toggle-label">
+        <span></span>
+      </label>
+    </header>
+
+    <!-- ======================================================= FORM  ==========================================================-->
+
+    <div id="contact-container">
+      <script src="https://www.google.com/recaptcha/api.js"></script>
+
+      <div class="form-container">
+        <div id="form-header">
+          <h1>Contact Us</h1>
+
+          <p>
+            <i>We'll get back to you as early as possible.</i>
+          </p>
+        </div>
+
+        <form method="post" id="reused_form">
+          <div class="form-group">
+            <label for="name" class="form-label">Your Name</label>
+            <input
+              type="text"
+              required
+              maxlength="50"
+              class="form-control"
+              id="name"
+              name="Name"
+              placeholder="Jane Doe"
+              tabindex="1"
+              required
+            />
+          </div>
+
+          <div class="form-group">
+            <label for="email" class="form-label">Your Email</label>
+
+            <input
+              type="email"
+              required
+              maxlength="50"
+              class="form-control"
+              id="email"
+              name="Email"
+              placeholder="jane@doe.com"
+              tabindex="2"
+              required
+            />
+          </div>
+
+          <div class="form-group">
+            <label for="subject" class="form-label">Subject</label>
+            <input
+              type="text"
+              required
+              maxlength="50"
+              class="form-control"
+              id="subject"
+              name="Subject"
+              placeholder="Hello There!"
+              tabindex="3"
+              required
+            />
+          </div>
+
+          <div class="form-group">
+            <label for="message" class="form-label">Message</label>
+            <textarea
+              class="form-control"
+              maxlength="6000"
+              rows="5"
+              cols="50"
+              id="message"
+              name="Message"
+              placeholder="Enter Message..."
+              tabindex="4"
+            ></textarea>
+          </div>
+
+          <div
+            class="g-recaptcha"
+            data-sitekey="6Le5E24cAAAAAPpaMthIbyDYqdZz76FZQ50qkZGM"
+          ></div>
+
+          <div>
+            <button type="submit" class="contact-btn">Send!</button>
+          </div>
+        </form>
+
+        <div id="success_message" style="display: none">
+          <h4>Thanks! We'll get back to you soon.</h4>
+        </div>
+
+        <div
+          id="error_message"
+          style="width: 100%; height: 100%; display: none"
+        >
+          <h3>Error</h3>
+          Sorry there was an error sending your form.
+        </div>
+      </div>
+    </div>
+
+    <ul class="contact-info">
+      <li>Or call us by phone at +634-9576-1797</li>
+
+      <li>STORE HOURS:</li>
+      <li>Monday thru Saturday: 8am to 5pm</li>
+      <li>Sunday: Closed</li>
+
+      <li>
+        Audiance Auto Parts(TM) respects your privacy and safety concerns.
+      </li>
+      <li>Follow us:</li>
+    </ul>
+
+    <ul class="social-media">
+      <!-- opens new window -->
+
+      <li>
+        <a href="https://www.facebook.com/salbusilangauto" target="_blank"
+          ><img
+            src="../images/facebook-icon.png"
+            alt="facebook-logo"
+            height="95px"
+            width="130px"
+        /></a>
+      </li>
+
+      <li>
+        <a href="https://www.instagram.com/salbusilangauto/" target="_blank"
+          ><img
+            src="../images/Instagram-icon.png"
+            alt="instagram-logo"
+            height="95px"
+            width="130px"
+        /></a>
+      </li>
+    </ul>
+
+    <!-- ======================================================= Footer  ==========================================================-->
+
+    <section class="site-footer">
+      <div class="f-col-1">
+        <ul>
+          <li class="store-name-1">Audiance Auto Parts</li>
+          <li class="store-desc">
+            Audiance is the one-stop shop for the parts and products you need to
+            fix your car with confidence!
+          </li>
+          <li class="store-phone">Phone: +634-9576-1797</li>
+          <li class="email">
+            <a href="./contact-us/form.html">Email:support@audianceparts.com</a>
+          </li>
+          <li class="hours">Store Hours: Mon - Sat: 8am to 5pm</li>
+          <li class="hours">Sunday: Closed</li>
+        </ul>
+      </div>
+
+      <div class="f-col-2">
+        <ul>
+          <li class="store-address-1">Our Address</li>
+          <li class="store-address-2">Audiance Auto Parts (AAP)</li>
+          <li class="store-address-2">
+            Bosch Building, Tagaytay Rd. Sitio Muzon, Brgy. Puting Kahoy, Silang
+            Cavite 4118
+          </li>
+          <li class="store-map">
+            <a
+              href="https://goo.gl/maps/xLEsusHs5Vn2sD1j6"
+              target="_map"
+              class="footer-address__link"
+              >Get Directions</a
+            >
+          </li>
+          <li class="copyright">Copyrights 2021</li>
+          <li class="store-name-2">Audiance Auto Parts Corp</li>
+          <li class="rights">All rights reserved.</li>
+          <li class="terms">Terms of Use Privacy Policy</li>
+        </ul>
+      </div>
+    </section>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  </body>
+</html>
