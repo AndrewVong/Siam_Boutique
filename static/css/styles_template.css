@@ -1,0 +1,329 @@
+/* Global Styles */
+body {
+  font-family: 'Amazon Ember', sans-serif; /* Apply Lato font */
+}
+
+/* Header Styles */
+.header-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #320000; /* Set header background color */
+}
+
+
+
+
+.logo a {
+  font-size: 1.5rem; /* Increase font size for emphasis */
+  font-weight: bold; /* Use a bolder font weight */
+  color: #fff;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 130px;
+  height: 130px;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.logo a img {
+  width: 100%;
+  height: auto;
+}
+
+.navigation-menu {
+  order: 1;
+}
+
+.navigation-menu ul {
+  display: flex;
+  list-style-type: none;
+}
+
+.navigation-menu ul li {
+  margin-right: 10px;
+}
+
+.navigation-menu ul li a {
+  font-family: 'Amazon Ember', sans-serif; /* Apply Lato font */
+  font-size: 1.2rem; /* Increase font size for emphasis */
+  font-weight: normal; /* Use a normal font weight */
+  color: #eee;
+  text-decoration: none;
+  transition: color 0.3s ease; /* Add a smooth color transition */
+  position: relative; /* Enable positioning for pseudo-elements */
+}
+
+.navigation-menu ul li a::before {
+  content: '';
+  position: absolute;
+  bottom: -2px; /* Position the line below the link text */
+  left: 0;
+  width: 100%;
+  height: 2px; /* Adjust thickness of the line */
+  background-color: #ff6600; /* Set a distinct color for the line */
+  transform: scaleX(0); /* Start with no width */
+  transition: transform 0.3s ease; /* Add a smooth transform transition */
+}
+
+
+.navigation-menu ul li a:hover {
+  color: #ff6600;
+  border: 2px solid #fff; /* Add a white border */
+  border-radius: 5px; /* Apply rounded edges */
+  padding: 8px 12px; /* Increase the padding values as desired */
+}
+
+
+.navigation-menu ul li a:hover::before {
+  transform: scaleX(1); /* Expand the line on hover */
+}
+
+/* Featured Products Section Styles */
+@keyframes gradientAnimation {
+  0% { background: linear-gradient(45deg, #f7f9ff, #faf7ff); }
+  25% { background: linear-gradient(45deg, #faf7ff, #fffaf6); }
+  50% { background: linear-gradient(45deg, #fffaf6, #fff3e6); }
+  75% { background: linear-gradient(45deg, #fff3e6, #fffaf6); }
+  100% { background: linear-gradient(45deg, #fffaf6, #f7f9ff); }
+}
+
+#featured-products {
+  animation: gradientAnimation 10s ease infinite;
+  margin-bottom: 100px;
+}
+
+/* Section title */
+.section-title {
+  font-family: 'Amazon Ember', sans-serif;
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 20px;
+  border-bottom: 2px solid #333;
+  padding-bottom: 10px;
+  text-align: center;
+}
+
+/* Grid container for product categories */
+.grid-container-categories,
+.grid-container-listings,
+.grid-container {
+  display: grid;
+  gap: 5px;
+  margin-bottom: 60px;
+}
+
+.grid-container-categories {
+  grid-template-columns: repeat(5, 1fr);
+}
+
+.grid-container-listings {
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.grid-container {
+  grid-template-columns: repeat(5, 1fr);
+  justify-content: center;
+  justify-items: center;
+}
+
+/* Grid item for product categories */
+.grid-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  background-color: #ffffff;
+  width: 100%;
+  padding-top: 0;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+}
+
+/* Grid item image for product categories */
+.grid-container-categories .grid-item img {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 209/209;
+  object-fit: cover;
+}
+
+/* Grid item image for product listings */
+.grid-container-listings .grid-item img {
+  max-width: 100%;
+  height: auto;
+  transition: opacity 0.3s ease;
+  padding: 0;
+}
+
+/* Larger items in product listings */
+.larger-item img {
+  max-width: 100%;
+  height: auto;
+  transition: opacity 0.3s ease;
+  width: 120%;
+}
+
+/* Image header */
+.image-header {
+  font-family: "Amazon Ember", sans-serif;
+  font-size: 16px;
+  align-self: flex-start;
+  margin-bottom: 0;
+  padding: 10px;
+  z-index: 1;
+}
+
+/* Image name */
+.image-name {
+  font-family: 'Arial', cursive;
+  font-size: 14px;
+  margin-top: 5px;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  background-color: rgba(0, 153, 255, 0.8);
+  padding: 5px;
+  color: #fff;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.grid-item:hover .image-name {
+  opacity: 1;
+}
+
+/* Carousel */
+.carousel {
+  display: flex;
+  overflow: hidden;
+  width: 100%;
+  align-items: center;
+}
+
+.carousel-item {
+  flex: 0 0 100%;
+  opacity: 1;
+  transition: opacity 0.5s ease-in-out;
+  animation-name: carousel-slide;
+  animation-duration: 8s;
+  animation-iteration-count: infinite;
+}
+
+.carousel img {
+  max-width: 100%;
+  max-height: 500px;
+  object-fit: contain;
+}
+
+@keyframes carousel-slide {
+  0% {
+    transform: translateX(0);
+  }
+  33.33% {
+    transform: translateX(-100%);
+  }
+  66.66% {
+    transform: translateX(-200%);
+  }
+  100% {
+    transform: translateX(-200%);
+  }
+}
+
+@media (max-width: 600px) {
+  .grid-container {
+    gap: 2px;
+  }
+}
+
+/* Footer Styles */
+.footer-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+
+  background-color: #320000;
+  padding: 10px 20px;
+  z-index: 999; /* Add this line to bring the footer in front of other elements */
+}
+
+
+.footer-text {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  width: 100%; /* Add this line to make the text span full width */
+  margin-top: 10px; /* Add this line for separation from the columns */
+}
+
+.footer-text p {
+  font-family: 'Amazon Ember', sans-serif;
+  font-size: 1rem;
+  font-weight: normal;
+  color: #eee;
+  margin-bottom: 5px;
+}
+
+.footer-text a {
+  color: #ff6600;
+  text-decoration: none;
+  transition: color 0.3s ease;
+
+}
+
+.footer-column h4 {
+  font-size: .9em; /* Increase font size for better visibility */
+  font-weight: bold; /* Add bold font weight for emphasis */
+  text-transform: uppercase; /* Convert text to uppercase for distinction */
+  color: #eee;
+  text-align: center;
+}
+
+
+.footer-column ul li {
+  margin-bottom: 5px; /* Add margin to create space between the links */
+}
+
+.footer-column ul li a {
+  text-decoration: none; /* Remove underline */
+ color: rgb(238, 238, 238); /* Same color (header links) */
+}
+
+
+
+.footer-text a:hover {
+  color: #fff;
+  border-bottom-color: #fff; /* Add this line to change the underline color on hover */
+}
+
+.no-bullets,
+.footer-text ul {
+  list-style: none;
+}
+
+.footer-text li {
+  margin-bottom: 5px;
+}
+
+.footer-text li a {
+  color: #ff6600;
+  text-decoration: none;
+  transition: color 0.3s ease;
+  display: inline-block;
+}
+
+
+
+.footer-column {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
