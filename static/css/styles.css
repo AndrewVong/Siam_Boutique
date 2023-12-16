@@ -89,9 +89,9 @@ nav ul li:nth-child(n+1):nth-child(-n+3):hover a {
 /* Styles anchor tags within list items within the menu class, setting them as block-level elements. */
 
 
-.button.secondary {
-  /* border-bottom: 1px #B31E38 solid; */
-}
+/* .button.secondary {
+  border-bottom: 1px #B31E38 solid;
+} */
 /* Styles secondary buttons, adding a solid bottom border with a specific color. */
 
 .search-bar {
@@ -292,14 +292,14 @@ button#searchButton {
     background: transparent;
   }
   
-  .button:not(.secondary) a:hover {
-    /* background: #B31E38; 
-    border-color: #32005e; */
-  }
+  /* .button:not(.secondary) a:hover {
+    background: #B31E38; 
+    border-color: #32005e;
+  } */
   
-  .button.secondary a:hover {
-    /* color: #32005e; */
-  }
+  /* .button.secondary a:hover {
+    color: #32005e;
+  } */
 }
 
 
