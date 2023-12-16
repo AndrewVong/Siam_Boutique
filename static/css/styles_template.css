@@ -1,329 +1,662 @@
-/* Global Styles */
+/* General */
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+/* Global styles applied to all elements, setting box-sizing, padding, and margin. */
+
 body {
-  font-family: 'Amazon Ember', sans-serif; /* Apply Lato font */
+  font-family: "Amazon Ember", sans-serif;
 }
+/* Styles the body element, setting the font family to "Amazon Ember" with a fallback to sans-serif. */
+.header-primary {
 
-/* Header Styles */
-.header-container {
   display: flex;
-  justify-content: space-between;
-  align-items: center;
-  background-color: #320000; /* Set header background color */
+  justify-content: center; /* Horizontally center the content */
+  align-items: center; /* Vertically center the content */
+}
+
+.logo {
+  display: flex;
+  justify-content: center; /* Horizontally center the content */
+  align-items: center; /* Vertically center the content */
 }
 
 
-
-
-.logo a {
-  font-size: 1.5rem; /* Increase font size for emphasis */
-  font-weight: bold; /* Use a bolder font weight */
-  color: #fff;
-  text-decoration: none;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 130px;
-  height: 130px;
-  border-radius: 50%;
-  overflow: hidden;
-}
-
-.logo a img {
+.header-secondary {
+  position: relative;
+  /* top: 0; */
   width: 100%;
+  z-index: 999;
+  border-bottom: 1px solid #F06F00;
+  animation: glow 1.5s infinite alternate;
+}
+/* Styles the header container, fixing its position at the top of the page, taking full width, and setting a high stacking order. */
+
+
+/* Header */
+.logo img {
+  width: 10vw;
   height: auto;
+  border-radius: 50%;
 }
+/* Styles the images within the logo class, giving them a specific width relative to viewport width, auto height, and a circular border. */
 
-.navigation-menu {
-  order: 1;
+
+/* Header Section */
+nav {
+  background-color: #F06F00;
+  padding: 5px 20px;
 }
+/* Styles the nav element, setting its background color and adding padding. */
 
-.navigation-menu ul {
-  display: flex;
+nav ul {
   list-style-type: none;
 }
+/* Styles unordered lists within the nav element, removing the default bullet points. */
 
-.navigation-menu ul li {
-  margin-right: 10px;
-}
-
-.navigation-menu ul li a {
-  font-family: 'Amazon Ember', sans-serif; /* Apply Lato font */
-  font-size: 1.2rem; /* Increase font size for emphasis */
-  font-weight: normal; /* Use a normal font weight */
-  color: #eee;
+nav ul li a {
+  color: white;
   text-decoration: none;
-  transition: color 0.3s ease; /* Add a smooth color transition */
-  position: relative; /* Enable positioning for pseudo-elements */
+  font-size: 22px;
+  padding: 0px;
+  border-radius: 4px;
+  display: block;
+  transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
 }
+/* Styles anchor tags within list items within the nav element, setting their color, text decoration, font size, padding, border radius, display, and transitions. */
 
-.navigation-menu ul li a::before {
-  content: '';
-  position: absolute;
-  bottom: -2px; /* Position the line below the link text */
-  left: 0;
-  width: 100%;
-  height: 2px; /* Adjust thickness of the line */
-  background-color: #ff6600; /* Set a distinct color for the line */
-  transform: scaleX(0); /* Start with no width */
-  transition: transform 0.3s ease; /* Add a smooth transform transition */
-}
-
-
-.navigation-menu ul li a:hover {
-  color: #ff6600;
-  border: 2px solid #fff; /* Add a white border */
-  border-radius: 5px; /* Apply rounded edges */
-  padding: 8px 12px; /* Increase the padding values as desired */
-}
-
-
-.navigation-menu ul li a:hover::before {
-  transform: scaleX(1); /* Expand the line on hover */
-}
-
-/* Featured Products Section Styles */
-@keyframes gradientAnimation {
-  0% { background: linear-gradient(45deg, #f7f9ff, #faf7ff); }
-  25% { background: linear-gradient(45deg, #faf7ff, #fffaf6); }
-  50% { background: linear-gradient(45deg, #fffaf6, #fff3e6); }
-  75% { background: linear-gradient(45deg, #fff3e6, #fffaf6); }
-  100% { background: linear-gradient(45deg, #fffaf6, #f7f9ff); }
-}
-
-#featured-products {
-  animation: gradientAnimation 10s ease infinite;
-  margin-bottom: 100px;
-}
-
-/* Section title */
-.section-title {
-  font-family: 'Amazon Ember', sans-serif;
-  font-size: 24px;
+nav ul li:nth-child(n+1):nth-child(-n+3):hover a {
+  background-color: white;
+  color: #F06F00;
+  text-decoration: underline #B31E38;
   font-weight: bold;
-  margin-bottom: 20px;
-  border-bottom: 2px solid #333;
-  padding-bottom: 10px;
-  text-align: center;
+  box-shadow: 0 5px 5px -5px #F06F00, 0 0 10px #98FF98, 0 0 15px #98FF98;
 }
 
-/* Grid container for product categories */
-.grid-container-categories,
-.grid-container-listings,
-.grid-container {
-  display: grid;
-  gap: 5px;
-  margin-bottom: 60px;
-}
+/* Styles anchor tags within specific list items (2nd to 6th) when hovered over, changing their background color, text color, text decoration, font weight, and adding box shadows. */
 
-.grid-container-categories {
-  grid-template-columns: repeat(5, 1fr);
-}
-
-.grid-container-listings {
-  grid-template-columns: repeat(4, 1fr);
-}
-
-.grid-container {
-  grid-template-columns: repeat(5, 1fr);
-  justify-content: center;
-  justify-items: center;
-}
-
-/* Grid item for product categories */
-.grid-item {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  position: relative;
-  overflow: hidden;
-  background-color: #ffffff;
-  width: 100%;
-  padding-top: 0;
-  box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
-}
-
-/* Grid item image for product categories */
-.grid-container-categories .grid-item img {
-  width: 100%;
-  height: auto;
-  aspect-ratio: 209/209;
-  object-fit: cover;
-}
-
-/* Grid item image for product listings */
-.grid-container-listings .grid-item img {
-  max-width: 100%;
-  height: auto;
-  transition: opacity 0.3s ease;
-  padding: 0;
-}
-
-/* Larger items in product listings */
-.larger-item img {
-  max-width: 100%;
-  height: auto;
-  transition: opacity 0.3s ease;
-  width: 120%;
-}
-
-/* Image header */
-.image-header {
-  font-family: "Amazon Ember", sans-serif;
+.menu li {
   font-size: 16px;
-  align-self: flex-start;
-  margin-bottom: 0;
-  padding: 10px;
-  z-index: 1;
+  padding: 15px 5px;
 }
+/* Styles list items within the menu class, setting their font size and padding. */
 
-/* Image name */
-.image-name {
-  font-family: 'Arial', cursive;
-  font-size: 14px;
-  margin-top: 5px;
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-  background-color: rgba(0, 153, 255, 0.8);
-  padding: 5px;
-  color: #fff;
-  opacity: 0;
-  transition: opacity 0.3s ease;
+.menu li a {
+  display: block;
 }
+/* Styles anchor tags within list items within the menu class, setting them as block-level elements. */
 
-.grid-item:hover .image-name {
-  opacity: 1;
+
+.button.secondary {
+  /* border-bottom: 1px #B31E38 solid; */
 }
+/* Styles secondary buttons, adding a solid bottom border with a specific color. */
 
-/* Carousel */
-.carousel {
-  display: flex;
-  overflow: hidden;
-  width: 100%;
-  align-items: center;
+.search-bar {
+  background-color: #F06F00;
+  border: 1px solid #F06F00;
 }
+/* Styles the search bar, setting its background color and adding a 1px solid border with the same color. */
 
-.carousel-item {
-  flex: 0 0 100%;
-  opacity: 1;
-  transition: opacity 0.5s ease-in-out;
-  animation-name: carousel-slide;
-  animation-duration: 8s;
-  animation-iteration-count: infinite;
+#searchInput,
+#searchButton {
+  padding: 4px;
+  margin: 2px;
 }
+/* Styles elements with IDs searchInput and searchButton, setting their padding and margin. */
 
-.carousel img {
-  max-width: 100%;
-  max-height: 500px;
-  object-fit: contain;
+#searchInput {
+  border-radius: 16px;
 }
+/* Styles the search input element, giving it a border radius of 16px. */
 
-@keyframes carousel-slide {
-  0% {
-    transform: translateX(0);
-  }
-  33.33% {
-    transform: translateX(-100%);
-  }
-  66.66% {
-    transform: translateX(-200%);
-  }
-  100% {
-    transform: translateX(-200%);
-  }
+button#searchButton {
+  background: #F06F00;
+  color: #F06F00;
 }
+/* Styles the search button element, setting its background and text color to the same value. */
 
-@media (max-width: 600px) {
-  .grid-container {
-    gap: 2px;
-  }
+.search-bar input[type="text"]:focus {
+  outline: none;
+  box-shadow: 0 0 10px #98FF98;
 }
+/* Styles the search input element when focused, removing the outline and adding a specific box shadow. */
 
-/* Footer Styles */
-.footer-container {
+/* Mobile Menu */
+.menu {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-
-  background-color: #320000;
-  padding: 10px 20px;
-  z-index: 999; /* Add this line to bring the footer in front of other elements */
-}
-
-
-.footer-text {
-  display: flex;
-  flex-direction: column;
   align-items: center;
+}
+/* Styles the menu container for mobile devices, enabling flexbox and adjusting alignment and spacing. */
+
+.toggle {
+  order: 1;
+  cursor: pointer;
+}
+/* Styles the toggle element used for menu navigation, changing its order and cursor style. */
+
+.item.button {
+  order: 2;
+}
+/* Styles buttons within the menu items, changing their order. */
+
+
+  .item.button span {
+    display: none;
+  }
+
+  
+  .item {
+  width: 100%;
   text-align: center;
-  width: 100%; /* Add this line to make the text span full width */
-  margin-top: 10px; /* Add this line for separation from the columns */
+  order: 3;
+  display: none;
+}
+/* Styles individual menu items, setting their width, text alignment, order, and initially hiding them. */
+
+.item.active {
+  display: block;
+}
+/* Styles active menu items, displaying them as blocks. */
+
+.bars {
+  display: inline-flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 18px;
+  position: relative;
+  width: 18px;
+  transition: transform 0.3s ease;
+}
+/* Styles the bars used for the mobile menu, arranging them in a column layout with centered alignment, specifying their height and width, and adding a transition effect. */
+
+.bar {
+  position: absolute;
+  width: 120%;
+  height: 2.5px;
+  background-color: black;
+  transition: transform 0.3s ease;
+}
+/* Styles individual bars within the mobile menu, positioning them absolutely, setting their width, height, background color, and adding a transition effect. */
+
+.top-bar {
+  top: 10%;
+  transform-origin: center;
+  background-color: white;
+}
+/* Styles the top bar of the mobile menu, setting its position, transform origin, and background color. */
+
+.middle-bar {
+  top: 50%;
+  transform-origin: center;
+  background-color: white;
+}
+/* Styles the middle bar of the mobile menu, setting its position, transform origin, and background color. */
+
+.bottom-bar {
+  top: 90%;
+  transform-origin: center;
+  background-color: white;
+}
+/* Styles the bottom bar of the mobile menu, setting its position, transform origin, and background color. */
+
+.closed .top-bar {
+  transform: translateY(-50%) rotate(45deg) translateX(50%);
+  background-color: #B31E38;
+  width: 115%;
+}
+/* Styles the top bar of the closed mobile menu, applying a transformation for rotation, translation, changing its background color, and adjusting its width. */
+
+.closed .middle-bar {
+  opacity: 0;
+}
+/* Styles the middle bar of the closed mobile menu, making it invisible by altering its opacity. */
+
+.closed .bottom-bar {
+  transform: translateY(-50%) rotate(-45deg) translateX(50%);
+  background-color: #B31E38;
+  width: 115%;
+}
+/* Styles the bottom bar of the closed mobile menu, applying a transformation for rotation, translation, changing its background color, and adjusting its width. */
+
+.top-bar:hover,
+.middle-bar:hover,
+.bottom-bar:hover,
+.closed .top-bar:hover,
+.closed .bottom-bar:hover {
+  box-shadow: 0 0 10px #98FF98;
+}
+/* Adds a box shadow effect to specific bars within the mobile menu when hovered over. */
+
+
+
+
+
+
+/* Tablet Menu */
+@media screen and (min-width: 468px) {
+  .header-secondary {
+    position: relative;
+  }
+  
+  .item.button span {
+    display: inline;
+  }
+  
+  .logo {
+    flex: 1;
+  }
+  
+  nav ul li:nth-child(n+1):nth-child(-n+3):hover a {
+    background-color: white;
+    color: #F06F00;
+    text-decoration: underline #B31E38;
+    font-weight: bold;
+    box-shadow: none;
+  }
+  
+  .menu {
+    justify-content: center;
+  }
+  
+  ul.menu {
+    background-color: #F06F00;
+  }
+  
+  .item.button {
+    width: auto;
+    order: 1;
+    display: block;
+  }
+  
+  .toggle {
+    order: 2;
+  }
+  
+  .button.secondary {
+    border: 0;
+  }
+  
+  .button a {
+    text-decoration: underline;
+    padding: 3.5px 7.5px;
+    border-radius: 50em;
+  }
+  
+  .button.secondary a {
+    background: transparent;
+  }
+  
+  .button:not(.secondary) a:hover {
+    /* background: #B31E38; 
+    border-color: #32005e; */
+  }
+  
+  .button.secondary a:hover {
+    /* color: #32005e; */
+  }
 }
 
-.footer-text p {
-  font-family: 'Amazon Ember', sans-serif;
-  font-size: 1rem;
-  font-weight: normal;
-  color: #eee;
+
+
+
+@media screen and (min-width: 768px) {
+
+  /* Styles for screens 768px or more */
+
+
+
+  .item {
+    display: block;
+    width: auto;
+  }
+
+  .toggle {
+    display: none;
+  }
+
+  .logo {
+    order: 0;
+  }
+
+  .item {
+    order: 1;
+  }
+
+  .button {
+    order: 2;
+  }
+
+  .menu li {
+    padding: 15px 10px;
+  }
+
+  .menu li.button {
+    padding-right: 0;
+  }
+  /* Header Section */
+  ul.menu {
+    background-color: #F06F00 ;
+    }
+
+
+
+}
+
+
+
+/* Main Content */
+section {
+ padding: 0px;
+ margin-top: 25px;
+}
+
+.section-title {
+  color: #191919;
+  font-size: 24px;
+  margin-top: 50px;
+  margin-bottom: 10px;
+  font-family: 'Market Sans', sans-serif; /* Use Amazon Ember font */
+  display: flex;
+  align-items: center;
+  
+}
+
+h2.section-title,
+h2.item-header{
+margin-bottom: 20px;
+}
+
+h3.item-title,
+p.item-description {
+margin-top: 10px;
+}
+
+.category-item {
+  flex-shrink: 0;
+  margin-right: 20px;
+  width: auto; /* Update width to auto */
+  max-width: 325px; /* Set a maximum width if needed */
+}
+
+.category-item:last-child {
+  margin-right: 0;
+}
+
+.category-item img {
+  width: 209px;
+  height: 209px;
+  object-fit: contain; /* Automatically adjust the image to fit within the container */
+  border-radius: 30px;
+}
+
+.listing-item {
+  flex-shrink: 0;
+  margin-right: 20px;
+  width: auto; /* Update width to auto */
+  max-width: 325px; /* Set a maximum width if needed */
+}
+
+.listing-item img {
+  width: 270px;
+  height: 360px;
+  object-fit: contain; /* Automatically adjust the image to fit within the container */
+
+}
+
+.listing-item:last-child {
+  margin-right: 0;
+}
+
+
+.item-header {
+  font-size: 18px;
   margin-bottom: 5px;
+  color: #363636;
 }
 
-.footer-text a {
-  color: #ff6600;
-  text-decoration: none;
-  transition: color 0.3s ease;
+.item-title {
+  color: #191919;
+}
 
+/* Product Categories and Listings */
+#featured-products .carousel {
+  display: flex;
+  gap: 20px;
+  padding: 10px;
+  white-space: nowrap;
+  overflow-x: hidden;
+  scroll-snap-type: x mandatory;
+  position: relative;
+}
+
+#product-categories .flexbox-carousel {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr); /* Set 6 columns with equal width */
+}
+
+#product-listings .flexbox-carousel{
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* Set 6 columns with equal width */
+}
+
+#featured-products .carousel-item img,
+#product-listings .carousel-item img {
+  width: auto;
+  height: auto;
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}
+
+.flexbox-carousel {
+  display: flex;
+  flex-wrap: nowrap;
+  overflow-x: hidden;
+}
+
+.carousel-nav {
+  font-size: 16px;
+  padding: 8px 12px;
+  background-color: #ffe8d6;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.carousel-nav:hover {
+  background-color: #ffb998;
+}
+
+.flexbox-carousel .carousel-wrapper {
+  display: flex;
+}
+
+.flexbox-carousel .category-item {
+  flex-shrink: 0;
+  margin-right: 10px;
+}
+
+.flexbox-carousel .category-item:last-child {
+  margin-right: 0;
+}
+
+
+.slick-prev,
+.slick-next {
+  background: none;
+  border: none;
+  color: #FFD700; /* Adjust color as needed */
+  font-size: 24px; /* Adjust font size as needed */
+  outline: none;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 1;
+}
+
+.slick-prev {
+  left: 0;
+}
+
+.slick-next {
+  right: 0;
+}
+
+.slick-prev:before,
+.slick-next:before {
+  content: "";
+  display: block; /* Change display property to block */
+  width: 40px; /* Adjust size of the circle as needed */
+  height: 40px; /* Adjust size of the circle as needed */
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: -1;
+  background: rgba(0, 0, 0, 0.7); /* Adjust hover transparency as needed */
+}
+
+.slick-prev i,
+.slick-next i {
+  position: relative;
+  z-index: 1;
+}
+
+.slick-prev:hover:before,
+.slick-next:hover:before {
+
+
+  z-index: 2; /* Increase z-index value */
+}
+
+.slick-prev:hover,
+.slick-next:hover {
+  color: #FFCCCC; /* Adjust hover color as needed */
+}
+
+
+
+.category-container {
+  background-color: transparent;
+  display: flex;
+  align-items: flex-end; /* Align items vertically in the center */
+  position: relative;
+}
+
+.see-all-container {
+  margin-left: 10px; /* Adjust the horizontal spacing as needed */
+  margin-bottom: 12px; /* Adjust the vertical spacing as needed */
+  position: relative;
+  display: inline-block;
+  margin-bottom: 21px;
+}
+
+.see-all-link {
+  display: inline-block; 
+ position: relative;
+  text-decoration-line: none;
+}
+
+.arrow {
+  display: inline-block;
+  font-size: 20px;
+  font-weight: bold;
+  width: 10px;
+  
+}
+
+.item-description {
+  font-family: "Market Sans", sans-serif;
+  color: #363636;
+}
+
+
+@keyframes glow {
+  0% {
+    box-shadow: 0 0 2px #B31E38;
+  }
+  100% {
+    box-shadow: 0 0 2px #B31E38;
+  }
+}
+
+/* Footer */
+.footer-container {
+  background-color: #363636;
+  padding: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center; /* Adjust spacing as needed */
+  border-top: 1px solid #000000;
+  animation: glow 1.5s infinite alternate;
+}
+
+.footer-column {
+  flex-basis: 100%;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+/* Footer */
+@media screen and (min-width: 468px) {
+  .footer-container {
+    flex-direction: row; /* Change to row layout on larger screens */
+    align-items: flex-start; /* Align items to the top */
+  }
+
+  .footer-column {
+    flex-basis: calc(33.33% - 20px); /* Restore original flex basis value */
+  }
+}
+
+.footer-column h4,
+.footer-text p {
+  color: white;
 }
 
 .footer-column h4 {
-  font-size: .9em; /* Increase font size for better visibility */
-  font-weight: bold; /* Add bold font weight for emphasis */
-  text-transform: uppercase; /* Convert text to uppercase for distinction */
-  color: #eee;
-  text-align: center;
+  font-size: 18px;
+  padding-top: 10px;
+  text-decoration: underline;
 }
 
+footer ul.no-bullets li a {
+  color: white;
+  padding-bottom: 5px;
 
-.footer-column ul li {
-  margin-bottom: 5px; /* Add margin to create space between the links */
 }
 
-.footer-column ul li a {
-  text-decoration: none; /* Remove underline */
- color: rgb(238, 238, 238); /* Same color (header links) */
+.no-bullets {
+  list-style-type: none;
+  padding-left: 0;
+  padding-top: 10px;
+  
 }
 
-
-
-.footer-text a:hover {
-  color: #fff;
-  border-bottom-color: #fff; /* Add this line to change the underline color on hover */
-}
-
-.no-bullets,
-.footer-text ul {
-  list-style: none;
-}
-
-.footer-text li {
-  margin-bottom: 5px;
-}
-
-.footer-text li a {
-  color: #ff6600;
+.no-bullets li a {
+  color: #191919;
   text-decoration: none;
-  transition: color 0.3s ease;
-  display: inline-block;
+  font-size: 16px;
+  margin-bottom: 5px;
+  
 }
 
-
-
-.footer-column {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+.no-bullets li a:hover {
+  text-decoration: underline;
 }
+
+.footer-text {
+  flex-basis: 100%;
+  text-align: center;
+  margin-top: 20px;
+}
+
 

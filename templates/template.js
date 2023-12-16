@@ -1,63 +1,39 @@
-// Add your JavaScript code here
+$(document).ready(function() {
+  // Toggle the "active" class on the ".item" element(s)
+  $(".toggle").on("click", function() {
+    $(".item").toggleClass("active");
+  });
 
+  const toggleButton = document.getElementById('toggleButton');
+  const headerSecondary = document.querySelector('.header-secondary');
 
-(function() {
-    const carousels = document.querySelectorAll(".owl-carousel");
-  
-    for (let i = 0; i < carousels.length; i++) {
-      const carousel = carousels[i];
-      let isDragging = false;
-      let startPosition = 0;
-      let currentTranslate = 0;
-      let prevTranslate = 0;
-      let animationID = null;
-  
-      carousel.addEventListener("mousedown", dragStart);
-      carousel.addEventListener("touchstart", dragStart);
-  
-      carousel.addEventListener("mousemove", drag);
-      carousel.addEventListener("touchmove", drag);
-  
-      carousel.addEventListener("mouseup", dragEnd);
-      carousel.addEventListener("touchend", dragEnd);
-  
-      carousel.addEventListener("mouseleave", dragEnd);
-      carousel.addEventListener("touchcancel", dragEnd);
-  
-      function dragStart(e) {
-        e.preventDefault();
-        startPosition = getPositionX(e);
-        isDragging = true;
-  
-        carousel.style.cursor = "grabbing";
-  
-        cancelAnimationFrame(animationID);
-      }
-  
-      function getPositionX(e) {
-        return e.type.includes("mouse") ? e.pageX : (e.touches[0]?.clientX || 0);
-      }
-  
-      function drag(e) {
-        if (isDragging) {
-          const currentPosition = getPositionX(e);
-          currentTranslate = prevTranslate + currentPosition - startPosition;
+  // Add event listener to toggle the .closed class on click
+  toggleButton.addEventListener('click', function(event) {
+    event.preventDefault(); // Prevent the default behavior of the anchor tag
+    headerSecondary.classList.toggle('closed');
+  });
+
+  // Initialize Slick Carousel for featured products
+  $('#featured-products .carousel').slick({
+    slidesToShow: 2,
+    slidesToScroll: 1,
+    prevArrow: '<button type="button" class="slick-prev"><i class="fas fa-arrow-left"></i></button>',
+    nextArrow: '<button type="button" class="slick-next"><i class="fas fa-arrow-right"></i></button>',
+    autoplay: true,
+    autoplaySpeed: 2000,
+    responsive: [
+      {
+        breakpoint: 768,
+        settings: {
+          slidesToShow: 2
+        }
+      },
+      {
+        breakpoint: 480,
+        settings: {
+          slidesToShow: 1
         }
       }
-  
-      function dragEnd() {
-        isDragging = false;
-  
-        carousel.style.cursor = "grab";
-  
-        prevTranslate = currentTranslate;
-  
-        requestAnimationFrame(setCarouselPosition);
-      }
-  
-      function setCarouselPosition() {
-        carousel.style.transform = `translateX(${currentTranslate}px)`;
-      }
-    }
-  })();
-  
+    ]
+  });
+});
