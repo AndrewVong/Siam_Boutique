@@ -1,0 +1,76 @@
+<!-- Google Fonts -->
+<link
+  href="https://fonts.googleapis.com/css2?family=Amazon+Ember&family=Market+Sans&display=swap"
+  rel="stylesheet"
+/>
+
+<!-- Include Font Awesome CSS -->
+<link
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+/>
+
+<!-- CSS stylesheets -->
+<link rel="stylesheet" href="/static/css/styles.css" />
+
+<!--Header-->
+<header>
+  <div class="header-primary">
+    <li class="logo">
+      <a href="./index.html">
+        <img src="../images/logo_PS_PB-02.jpg" />
+      </a>
+    </li>
+
+    <li class="item button"><span>Hello!</span><a href="#">Sign in</a></li>
+
+    <li class="item button secondary">
+      <span>or</span><a href="#">Register</a>
+    </li>
+  </div>
+
+  <div class="header-secondary">
+    <!-- Header section with logo, navigation menu, search bar, and user account/login options -->
+    <nav>
+      <ul class="menu">
+        <li class="item"><a href="#">Home</a></li>
+        <li class="item"><a href="#">About</a></li>
+        <li class="item"><a href="#">Products</a></li>
+        <li class="item"><a href="#">Deals</a></li>
+        <li class="item"><a href="#">News</a></li>
+        <!-- Add the search bar here -->
+        <li class="search-bar">
+          <input type="text" id="searchInput" placeholder="Search" />
+          <button
+            id="searchButton"
+            style="border: none; vertical-align: middle"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              x="0px"
+              y="0px"
+              width="25"
+              height="25"
+              viewBox="0 0 50 50"
+            >
+              <path
+                d="M21 4C11.082 4 3 12.082 3 22c0 9.918 8.082 18 18 18 3.622 0 6.992-1.087 9.82-2.938L43.379 49.621 47.621 45.379 35.225 32.982C37.581 29.938 39 26.135 39 22c0-9.918-8.083-18-18-18zm0 4c7.756 0 14 6.244 14 14 0 7.756-6.244 14-14 14-7.756 0-14-6.244-14-14 0-7.756 6.244-14 14-14z"
+                fill="#FFFFFF"
+              ></path>
+            </svg>
+          </button>
+        </li>
+
+        <li class="toggle">
+          <a id="toggleButton" href="#">
+            <span class="bars">
+              <span class="bar top-bar"></span>
+              <span class="bar middle-bar"></span>
+              <span class="bar bottom-bar"></span>
+            </span>
+          </a>
+        </li>
+      </ul>
+    </nav>
+  </div>
+</header>
