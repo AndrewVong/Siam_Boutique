@@ -42,4 +42,30 @@ $(document).ready(function() {
     // Load footer.html into the #footer div
     $("#footer").load("footer.html");
   });
+  
+  // Initialize Slick Carousel for product listings
+  $('.flexbox-carousel').slick({
+    slidesToShow: 2,
+    slidesToScroll: 1,
+    prevArrow: '<button type="button" class="slick-prev"><i class="fas fa-arrow-left"></i></button>',
+    nextArrow: '<button type="button" class="slick-next"><i class="fas fa-arrow-right"></i></button>',
+    autoplay: false,
+    autoplaySpeed: 2000,
+    responsive: [
+      {
+        breakpoint: 768,
+        settings: {
+          slidesToShow: 2
+        }
+      },
+      {
+        breakpoint: 480,
+        settings: {
+          slidesToShow: 1
+        }
+      }
+    ]
+  });
 });
+
+
