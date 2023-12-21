@@ -14,58 +14,54 @@ $(document).ready(function() {
       event.preventDefault(); // Prevent the default behavior of the anchor tag
       headerSecondary.classList.toggle('closed');
     });
-
-    // Initialize Slick Carousel for featured products
-    $('#featured-products .carousel').slick({
-      slidesToShow: 2,
-      slidesToScroll: 1,
-      prevArrow: '<button type="button" class="slick-prev"><i class="fas fa-arrow-left"></i></button>',
-      nextArrow: '<button type="button" class="slick-next"><i class="fas fa-arrow-right"></i></button>',
-      autoplay: true,
-      autoplaySpeed: 2000,
-      responsive: [
-        {
-          breakpoint: 768,
-          settings: {
-            slidesToShow: 2
-          }
-        },
-        {
-          breakpoint: 480,
-          settings: {
-            slidesToShow: 1
-          }
-        }
-      ]
-    });
-    
-    // Load footer.html into the #footer div
-    $("#footer").load("footer.html");
   });
+
+// Initialize Slick Carousel for featured products
+$('#featured-products .carousel').slick({
+  slidesToShow: 2,
+  slidesToScroll: 1,
+  prevArrow: '<button type="button" class="slick-prev"><i class="fas fa-arrow-left"></i></button>',
+  nextArrow: '<button type="button" class="slick-next"><i class="fas fa-arrow-right"></i></button>',
+  autoplay: true,
+  autoplaySpeed: 2000,
+  responsive: [
+    {
+      breakpoint: 468,
+      settings: {
+        slidesToShow: 1
+      }
+    },
+    {
+      breakpoint: 768,
+      settings: {
+        slidesToShow: 3
+      }
+    }
+  ]
+});
+
+  // Load footer.html into the #footer div
+  $("#footer").load("footer.html");
+
   
-  // Initialize Slick Carousel for product listings
-  $('.flexbox-carousel').slick({
+
+  // Initialize Slick Carousel for best-seller containers
+  // $('.image-container-2').slick({
+  //   slidesToShow: 2,
+  //   slidesToScroll: 1,
+  //   prevArrow: '<button type="button" class="slick-prev"><i class="fas fa-arrow-left"></i></button>',
+  //   nextArrow: '<button type="button" class="slick-next"><i class="fas fa-arrow-right"></i></button>',
+  //   autoplay: true,
+  //   autoplaySpeed: 2000,
+  // });
+
+  // Initialize Slick Carousel for the product category container
+  $('.image-container').slick({
     slidesToShow: 2,
     slidesToScroll: 1,
     prevArrow: '<button type="button" class="slick-prev"><i class="fas fa-arrow-left"></i></button>',
     nextArrow: '<button type="button" class="slick-next"><i class="fas fa-arrow-right"></i></button>',
-    autoplay: false,
-    autoplaySpeed: 2000,
-    responsive: [
-      {
-        breakpoint: 768,
-        settings: {
-          slidesToShow: 2
-        }
-      },
-      {
-        breakpoint: 480,
-        settings: {
-          slidesToShow: 1
-        }
-      }
-    ]
+    autoplay: true,
+    autoplaySpeed: 4000
   });
 });
-
-

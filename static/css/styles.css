@@ -4,7 +4,6 @@
   padding: 0;
   margin: 0;
 }
-/* Global styles applied to all elements, setting box-sizing, padding, and margin. */
 
 body {
   font-family: "Amazon Ember", sans-serif;
@@ -20,7 +19,6 @@ header {
 }
 
 
-/* Styles the body element, setting the font family to "Amazon Ember" with a fallback to sans-serif. */
 .header-primary {
 
   display: flex;
@@ -43,7 +41,6 @@ header {
   border-bottom: 1px solid #CE1616;
   animation: glow 1.5s infinite alternate;
 }
-/* Styles the header container, fixing its position at the top of the page, taking full width, and setting a high stacking order. */
 
 
 /* Header */
@@ -52,88 +49,70 @@ header {
   height: auto;
   border-radius: 50%;
 }
-/* Styles the images within the logo class, giving them a specific width relative to viewport width, auto height, and a circular border. */
-
 
 /* Header Section */
 nav {
-  background-color: #CE1616;
+  background-color: #FFF;
   padding: 5px 20px;
 }
-/* Styles the nav element, setting its background color and adding padding. */
 
 nav ul {
   list-style-type: none;
 }
-/* Styles unordered lists within the nav element, removing the default bullet points. */
 
 nav ul li a {
-  color: #FFF7EA ;
+  color: #990000 ;
   text-decoration: none;
   font-size: 22px;
-  padding: 0px;
+  padding: 5px;
   border-radius: 4px;
   display: block;
   transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
 }
-/* Styles anchor tags within list items within the nav element, setting their color, text decoration, font size, padding, border radius, display, and transitions. */
 
 nav ul li:nth-child(n+1):nth-child(-n+3):hover a {
-  background-color: #FFF7EA;
-  color: #CE1616;
-  text-decoration: underline #CE1616; 
- 
-  box-shadow: 0 5px 5px -5px #CE1616, 0 0 10px #98FF98, 0 0 15px #98FF98;
+  background-color: #FFF;
+  color: #990000;
+  text-decoration: underline #990000; 
+  box-shadow: 0 5px 5px -5px #990000, 0 0 10px #98FF98, 0 0 15px #98FF98;
 }
 
-/* Styles anchor tags within specific list items (2nd to 6th) when hovered over, changing their background color, text color, text decoration, font weight, and adding box shadows. */
 
 .menu li {
   font-size: 16px;
   padding: 15px 5px;
 }
-/* Styles list items within the menu class, setting their font size and padding. */
 
 .menu li a {
   display: block;
 }
-/* Styles anchor tags within list items within the menu class, setting them as block-level elements. */
 
-
-/* .button.secondary {
-  border-bottom: 1px #B31E38 solid;
-} */
-/* Styles secondary buttons, adding a solid bottom border with a specific color. */
 
 .search-bar {
-  background-color: #CE1616;
-  border: 1px solid #CE1616;
+  background-color: #fff;
+  border: 1px solid #fff;
 }
-/* Styles the search bar, setting its background color and adding a 1px solid border with the same color. */
 
 #searchInput,
 #searchButton {
   padding: 4px;
   margin: 2px;
 }
-/* Styles elements with IDs searchInput and searchButton, setting their padding and margin. */
 
 #searchInput {
   border-radius: 16px;
 }
-/* Styles the search input element, giving it a border radius of 16px. */
 
 button#searchButton {
-  background: #CE1616;
-  color: #CE1616;
+  background: #009e9e;
+  color: #009e9e;
+  border-radius: 50%;
 }
-/* Styles the search button element, setting its background and text color to the same value. */
 
 .search-bar input[type="text"]:focus {
   outline: none;
   box-shadow: 0 0 10px #98FF98;
 }
-/* Styles the search input element when focused, removing the outline and adding a specific box shadow. */
 
 /* Mobile Menu */
 .menu {
@@ -142,37 +121,30 @@ button#searchButton {
   justify-content: space-between;
   align-items: center;
 }
-/* Styles the menu container for mobile devices, enabling flexbox and adjusting alignment and spacing. */
 
 .toggle {
   order: 1;
   cursor: pointer;
 }
-/* Styles the toggle element used for menu navigation, changing its order and cursor style. */
 
 
 .item.button {
   order: 2;
  
 }
-/* Styles buttons within the menu items, changing their order. */
 
-
-  .item.button span {
+.item.button span {
     display: none;
   }
 
     /* Login button style */
     .item.button a:hover {
       color: #008254;
-    
-
     }
   
     /* Sign up button style */
     .item.button.secondary a:hover {
       color: #008254;
-
     }
   
   .item {
@@ -181,13 +153,10 @@ button#searchButton {
   order: 3;
   display: none;
 }
-/* Styles individual menu items, setting their width, text alignment, order, and initially hiding them. */
 
 .item.active {
   display: block;
 }
-
-
 
 /* Button style */
 .item.button a {
@@ -230,9 +199,6 @@ button#searchButton {
 
 
 
-
-/* Styles active menu items, displaying them as blocks. */
-
 .bars {
   display: inline-flex;
   flex-direction: column;
@@ -243,7 +209,6 @@ button#searchButton {
   width: 18px;
   transition: transform 0.3s ease;
 }
-/* Styles the bars used for the mobile menu, arranging them in a column layout with centered alignment, specifying their height and width, and adding a transition effect. */
 
 .bars:hover::after {
   content: '';
@@ -257,8 +222,6 @@ button#searchButton {
   box-shadow: 0 0 8px 4px rgba(255, 247, 234, 0.4); /* Adjusted size and opacity */
 }
 
-
-
 .bar {
   position: absolute;
   width: 120%;
@@ -266,61 +229,280 @@ button#searchButton {
   background-color: black;
   transition: transform 0.3s ease;
 }
-/* Styles individual bars within the mobile menu, positioning them absolutely, setting their width, height, background color, and adding a transition effect. */
 
 .top-bar {
   top: 10%;
   transform-origin: center;
-  background-color: #FFF7EA;
+  background-color: #990000;
 }
-/* Styles the top bar of the mobile menu, setting its position, transform origin, and background color. */
 
 .middle-bar {
   top: 50%;
   transform-origin: center;
-  background-color: #FFF7EA;
+  background-color: #990000;
 }
-/* Styles the middle bar of the mobile menu, setting its position, transform origin, and background color. */
 
 .bottom-bar {
   top: 90%;
   transform-origin: center;
-  background-color: #FFF7EA;
+  background-color: #990000;
 }
-/* Styles the bottom bar of the mobile menu, setting its position, transform origin, and background color. */
 
 .closed .top-bar {
   transform: translateY(-50%) rotate(45deg) translateX(50%);
-  background-color: #FFF7EA;
+  background-color: #990000;
   width: 115%;
 }
-/* Styles the top bar of the closed mobile menu, applying a transformation for rotation, translation, changing its background color, and adjusting its width. */
 
 .closed .middle-bar {
   opacity: 0;
 }
-/* Styles the middle bar of the closed mobile menu, making it invisible by altering its opacity. */
 
 .closed .bottom-bar {
   transform: translateY(-50%) rotate(-45deg) translateX(50%);
-  background-color: #FFF7EA;
+  background-color: #990000;
   width: 115%;
 }
-/* Styles the bottom bar of the closed mobile menu, applying a transformation for rotation, translation, changing its background color, and adjusting its width. */
 
 .top-bar:hover,
 .middle-bar:hover,
 .bottom-bar:hover,
 .closed .top-bar:hover,
 .closed .bottom-bar:hover {
-  box-shadow: 0 0 10px #98FF98;
+  box-shadow: 0 0 10px #990000;
 }
-/* Adds a box shadow effect to specific bars within the mobile menu when hovered over. */
+
+
+/* Featured Section */
+section {
+  padding: 0px;
+  margin-top: 25px;
+}
+
+.section-title {
+  color: #191919;
+  font-size: 24px;
+  margin-top: 50px;
+  margin-bottom: 10px;
+  font-family: 'Market Sans', sans-serif;
+  display: flex;
+  align-items: center;
+}
+
+.carousel-nav {
+  font-size: 16px;
+  padding: 8px 12px;
+  background-color: #FFF7EA;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.carousel-nav:hover {
+  background-color: #FFF7EA;
+}
+
+/* Slick Carousel Buttons */
+
+.slick-prev,
+.slick-next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: transparent;
+  border: none;
+  padding: 10px;
+  font-size: 0;
+  z-index: 1;
+}
+
+.slick-prev:before,
+.slick-next:before {
+  content: "";
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+  border-style: solid;
+  border-color: white;
+}
+
+.slick-prev:before {
+  border-width: 1.5px 1.5px 0 0;
+  transform: rotate(225deg);
+}
+
+.slick-next:before {
+  border-width: 1.5px 0 0 1.5px;
+  transform: rotate(-225deg);
+}
+
+.slick-prev {
+  left: 10px;
+}
+
+.slick-next {
+  right: 10px;
+}
+
+
+.carousel-nav {
+  font-size: 16px;
+  padding: 8px 12px;
+  background-color: #FFF7EA;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.carousel-nav:hover {
+  background-color: #FFF7EA;
+}
+
+.carousel-wrapper {
+  display: flex;
+}
+
+#featured-products .carousel {
+  display: flex;
+  justify-content: flex-start;
+  gap: 20px;
+  padding: 10px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+}
+
+#featured-products .carousel-item {
+  flex: 0 0 100%; /* Display one item per row initially */
+}
+
+#featured-products .carousel-item img {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  border-radius: 15px;
+}
+
+/* Popular Categories and Best Seller Section */
+.image-container,
+.image-container-2 {
+  display: flex;
+  gap:2.5px;
+  padding:10px;
+}
+
+.image-container img,
+.image-container-2 img {
+  width: 100%; /* Adjust width as needed */
+}
+
+/* Adjustments for the image-item container */
+.image-item {
+  /* border: 2px solid #ccc; */
+  margin-bottom: 10px;
+  padding: 10px;
+}
+
+/* Adjustments for the item-details container */
+.image-item .item-details {
+  background-color: #f4f4f4;
+  padding: 5px;
+}
+
+/* Adjustments for the item-title */
+.image-item .item-details .item-title {
+  font-size: 18px;
+  color: #333;
+}
+
+/* Adjustments for the item-description */
+.image-item .item-details .item-description {
+  font-size: 14px;
+  color: #777;
+}
+
+/* Categories */
+.see-all-container {
+  display: inline-block;
+  position: relative;
+  margin-left: 10px;
+  margin-bottom: 12px;
+}
+
+.see-all-link {
+  display: inline-block; 
+  position: relative;
+  text-decoration-line: none;
+}
+
+.arrow {
+  display: inline-block;
+  width: 10px;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+
+/* Best Sellers */
+#best-seller .image-container-2 {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+}
+
+#best-seller .slide {
+  background-color: #f9f9f9; /* Optional styling */
+  padding: 15px; /* Optional styling */
+}
+
+/* Adjust the image and item details styles as needed */
+
+#best-seller .image-item img {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  border-radius: 10px;
+}
+
+#best-seller .item-details {
+  text-align: center;  /* Optional styling */
+}
+
+
+#best-seller .image-container-2 {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 10px;
+}
+
+#best-seller .slide {
+  background-color: #f9f9f9; /* Optional styling */
+  padding: 2.5px; /* Optional styling */
+}
+
+/* Adjust the image and item details styles as needed */
+
+#best-seller .image-item img {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  border-radius: 5px;
+}
+
+#best-seller .item-details {
+  text-align: center;  /* Optional styling */
+}
+
 
 /* Tablet Menu */
 @media screen and (min-width: 468px) {
 
-  /* Header */
+  #best-seller .image-container-2 {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+ /* Header */
   .header-secondary {
     position: relative;
   }
@@ -334,14 +516,13 @@ button#searchButton {
     flex: 1;
   }
   
-  
-  /* Menu Styling */
+  /* nav menu styling */
   .menu {
     justify-content: center;
   }
   
   ul.menu {
-    background-color: #CE1616;
+    background-color: #FFF;
   }
   
   /* Button and Toggle */
@@ -369,16 +550,19 @@ button#searchButton {
   .button.secondary a {
     background: transparent;
   }
-}
+
+  h2.section-title,
+  h2.item-header,
+  h3.item-title,
+  p.item-description {
+    margin-left: calc((100vw - 430px) * 0.05);
+    margin-right: calc((100vw - 430px) * 0.05);
+  }
+ }
 
 
 @media screen and (min-width: 768px) {
   /* Styles for screens 768px or more */
-
-  /* Header Section */
-  ul.menu {
-    background-color: #CE1616;
-  }
 
   /* Item Styles */
   .item {
@@ -386,294 +570,52 @@ button#searchButton {
     width: auto;
     order: 1;
   }
-
   .toggle {
     display: none;
     order: 2;
   }
-
   .logo {
     order: 0;
   }
-
   /* Button Styles */
   .button, .toggle {
     order: 2;
   }
-
   /* Menu Styles */
   .menu li {
     padding: 15px 10px;
   }
-
   .menu li.button {
     padding-right: 0;
   }
-
   .item a {
     display: inline-block;
   }
-
   nav ul li:nth-child(n+1):nth-child(-n+3):hover a {
     background-color: initial;
     color: #ccc;
-    text-decoration: none;
+   
+    text-decoration: underline #990000;
     box-shadow: none;
   }
-}
-
-/* Main Content */
-section {
- padding: 0px;
- margin-top: 25px;
-}
-
-.section-title {
-  color: #191919;
-  font-size: 24px;
-  margin-top: 50px;
-  margin-bottom: 10px;
-  font-family: 'Market Sans', sans-serif; /* Use Amazon Ember font */
-  display: flex;
-  align-items: center;
-  
-}
-
-h2.section-title,
-h2.item-header{
-margin-bottom: 20px;
-margin-left: 10px;
-margin-right: 10px;
-}
-
-h3.item-title,
-p.item-description {
-
-margin-top: 10px;
-margin-left: 10px;
-margin-right: 10px;
 
 }
 
-.category-item {
-  flex-shrink: 0;
-  margin-right: 20px;
-  width: auto; /* Update width to auto */
-  max-width: 325px; /* Set a maximum width if needed */
-}
-
-.category-item:last-child {
-  margin-right: 0;
-}
-
-.category-item img {
-  width: 209px;
-  height: 209px;
-  object-fit: contain; /* Automatically adjust the image to fit within the container */
-  border-radius: 15px;
-  margin-left: 0;
-  margin-right: 0;
-}
-
-.listing-item {
-  flex-shrink: 0;
-  margin-right: 20px;
-  width: auto; /* Update width to auto */
-  max-width: 325px; /* Set a maximum width if needed */
-}
-
-.listing-item img {
-  width: 270px;
-  height: 360px;
-  object-fit: contain; /* Automatically adjust the image to fit within the container */
-  margin-left: 10px;
-  margin-right: 10px;
-  border-radius: 15px;
-}
-
-.listing-item:last-child {
-  margin-right: 0;
-}
-
-
-.item-header {
-  font-size: 18px;
-  margin-bottom: 5px;
-  color: #363636;
-}
-
-.item-title {
-  color: #191919;
-}
-
-/* Product Categories and Listings */
-#featured-products .carousel {
-  display: flex;
-  gap: 20px;
-  padding: 10px;
-  white-space: nowrap;
-  overflow-x: hidden;
-  scroll-snap-type: x mandatory;
-  position: relative;
-}
-
-/* Conflicts with slick carousel */
-#product-categories .flexbox-carousel {
-  /* display: flex; */
-  /* Set 6 columns with equal width */
-  /* grid-template-columns: repeat(6, 1fr);  */
-}
-
-/* Conflicts with slick carousel */
-#product-listings .flexbox-carousel{
-  /* display: grid; */
-  /* Set 6 columns with equal width */
-  /* grid-template-columns: repeat(4, 1fr);  */
-}
-
-#featured-products .carousel-item img,
-#product-listings .carousel-item img {
-  width: auto;
-  height: auto;
-  max-width: 100%;
-  max-height: 100%;
-  object-fit: contain;
-  border-radius: 15px;
-}
-
-.flexbox-carousel {
-  display: flex;
-  flex-wrap: nowrap;
-  overflow-x: hidden;
-}
-
-.carousel-nav {
-  font-size: 16px;
-  padding: 8px 12px;
-  background-color: #FFF7EA;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-  transition: background-color 0.3s ease-in-out;
-}
-
-.carousel-nav:hover {
-  background-color: #FFF7EA;
-}
-
-.flexbox-carousel .carousel-wrapper {
-  display: flex;
-}
-
-.flexbox-carousel .category-item {
-  flex-shrink: 0;
-  margin-right: 10px;
-
-}
-
-.flexbox-carousel .category-item:last-child {
-  margin-right: 0;
-}
-
-
-.slick-prev,
-.slick-next {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  background-color: transparent; /* Set background color to transparent */
-  
-  border: none;
-  padding: 10px;
-  font-size: 0; /* Hide any text content */
-  z-index: 1;
-}
-
-.slick-prev:before,
-.slick-next:before {
-  content: "";
-  display: inline-block;
-  width: 12px; /* Increase the arrowhead width to make them more visible */
-  height: 12px; /* Increase the arrowhead height to make them more visible */
-  border-style: solid;
-  border-color: white;
-}
-
-.slick-prev:before {
-  border-width: 1.5px 1.5px 0 0; /* Adjust the border-width to create the arrowhead pointing left */
-  transform: rotate(225deg); /* Rotate the arrowhead to point it in the correct direction */
-}
-
-.slick-next:before {
-  border-width: 1.5px 0 0 1.5px; /* Adjust the border-width to create the arrowhead pointing right */
-  transform: rotate(-225deg); /* Rotate the arrowhead to point it in the correct direction */
-}
-
-.slick-prev {
-  left: 10px;
-}
-
-.slick-next {
-  right: 10px;
-}
-
-
-
-
-.category-container {
-  background-color: transparent;
-  display: flex;
-  align-items: flex-end; /* Align items vertically in the center */
-  position: relative;
-}
-
-.see-all-container {
-  margin-left: 10px; /* Adjust the horizontal spacing as needed */
-  margin-bottom: 12px; /* Adjust the vertical spacing as needed */
-  position: relative;
-  display: inline-block;
-  margin-bottom: 21px;
-}
-
-.see-all-link {
-  display: inline-block; 
- position: relative;
-  text-decoration-line: none;
-}
-
-.arrow {
-  display: inline-block;
-  font-size: 20px;
-  font-weight: bold;
-  width: 10px;
-  
-}
-
-.item-description {
-  font-family: "Market Sans", sans-serif;
-  color: #363636;
-}
-
-
-@keyframes glow {
-  0% {
-    box-shadow: 0 0 2px #B31E38;
-  }
-  100% {
-    box-shadow: 0 0 2px #B31E38;
+@media (min-width: 1024px) {
+  #featured-products .carousel-item {
+    flex-basis: calc(25% - 50px); /* Display four items per row */
   }
 }
 
 /* Footer */
-.footer-container {
 
+.footer-container {
   background-color: #FFF7EA;
   padding: 20px;
   display: flex;
   flex-wrap: wrap;
   justify-content: center; /* Adjust spacing as needed */
   border-top: 1px solid #FFF7EA;
-  animation: glow 1.5s infinite alternate;
 }
 
 .footer-column {
@@ -682,26 +624,17 @@ margin-right: 10px;
   text-align: center;
 }
 
-/* Footer */
-@media screen and (min-width: 468px) {
 
-  h2.section-title,
-  h2.item-header,
-  h3.item-title,
-  p.item-description,
-  .category-item img,
-  .listing-item img {
-    margin-left: calc((100vw - 430px) * 0.05);
-    margin-right: calc((100vw - 430px) * 0.05);
-  }
-  
+
+/* Footer media query for larger screens */
+@media screen and (min-width: 468px) {
   .footer-container {
-    flex-direction: row; /* Change to row layout on larger screens */
-    align-items: flex-start; /* Align items to the top */
+    flex-direction: row; 
+    align-items: flex-start; 
   }
 
   .footer-column {
-    flex-basis: calc(33.33% - 20px); /* Restore original flex basis value */
+    flex-basis: calc(33.33% - 20px); 
   }
 }
 
@@ -716,17 +649,16 @@ margin-right: 10px;
   text-decoration: underline;
 }
 
-footer ul.no-bullets li a {
+/* Add parent class or ID to footer ul.no-bullets li a selector */
+.parent-class-name footer ul.no-bullets li a {
   color: #363636;
   padding-bottom: 5px;
-
 }
 
 .no-bullets {
   list-style-type: none;
   padding-left: 0;
   padding-top: 10px;
-  
 }
 
 .no-bullets li a {
@@ -734,7 +666,6 @@ footer ul.no-bullets li a {
   text-decoration: none;
   font-size: 16px;
   margin-bottom: 5px;
-  
 }
 
 .no-bullets li a:hover {
@@ -748,3 +679,23 @@ footer ul.no-bullets li a {
 }
 
 
+/* Animation */
+@keyframes glow {
+  0% {
+    box-shadow: 0 0 2px #B31E38;
+  }
+  100% {
+    box-shadow: 0 0 2px #B31E38;
+  }
+}
+
+/* Animation keyframes */
+ /* @keyframes glow {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0.5;
+  }
+}  */
+ 
