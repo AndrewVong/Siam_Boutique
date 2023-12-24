@@ -43,25 +43,30 @@ $('#featured-products .carousel').slick({
   // Load footer.html into the #footer div
   $("#footer").load("footer.html");
 
-  
 
-  // Initialize Slick Carousel for best-seller containers
-  // $('.image-container-2').slick({
-  //   slidesToShow: 2,
-  //   slidesToScroll: 1,
-  //   prevArrow: '<button type="button" class="slick-prev"><i class="fas fa-arrow-left"></i></button>',
-  //   nextArrow: '<button type="button" class="slick-next"><i class="fas fa-arrow-right"></i></button>',
-  //   autoplay: true,
-  //   autoplaySpeed: 2000,
-  // });
+// Common Slick Carousel configuration object
+var commonConfig = {
+  slidesToShow: 2.15,
+  slidesToScroll: 1,
+  prevArrow: '<button type="button" class="slick-prev"><i class="fas fa-arrow-left"></i></button>',
+  nextArrow: '<button type="button" class="slick-next"><i class="fas fa-arrow-right"></i></button>',
+  autoplay: true
+};
 
-  // Initialize Slick Carousel for the product category container
-  $('.image-container').slick({
-    slidesToShow: 2,
-    slidesToScroll: 1,
-    prevArrow: '<button type="button" class="slick-prev"><i class="fas fa-arrow-left"></i></button>',
-    nextArrow: '<button type="button" class="slick-next"><i class="fas fa-arrow-right"></i></button>',
-    autoplay: true,
-    autoplaySpeed: 4000
-  });
+// Configuration specific to the first carousel
+var carousel1Config = {
+  autoplaySpeed: 4000
+};
+
+// Configuration specific to the second carousel
+var carousel2Config = {
+  autoplaySpeed: 2000
+};
+
+// Initialize Slick Carousel for the product category containers
+$('.image-container').slick($.extend({}, commonConfig, carousel1Config));
+$('.image-container-3').slick($.extend({}, commonConfig, carousel2Config));
+
+
 });
+

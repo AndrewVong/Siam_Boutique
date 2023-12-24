@@ -386,14 +386,16 @@ section {
 
 /* Popular Categories and Best Seller Section */
 .image-container,
-.image-container-2 {
+.image-container-2,
+.image-container-3 {
   display: flex;
   gap:2.5px;
   padding:10px;
 }
 
 .image-container img,
-.image-container-2 img {
+.image-container-2 img,
+.image-container-3 img{
   width: 100%; /* Adjust width as needed */
 }
 
@@ -422,25 +424,33 @@ section {
   color: #777;
 }
 
-/* Categories */
-.see-all-container {
+.section-title {
   display: inline-block;
-  position: relative;
-  margin-left: 10px;
-  margin-bottom: 12px;
+
 }
 
+/* See-All-link in Categories and Best Sellers */
 .see-all-link {
-  display: inline-block; 
-  position: relative;
-  text-decoration-line: none;
+  display: inline-block;
+  float: right;
+  text-decoration-line: underline;
+  margin-top: -30px; /* Adjust the link vertically margin as needed */
+  margin-right: 20px;/* Adjust the link horizontally margin as needed */
+  color:#009e9e;
+
+}
+.see-all-link-2 {
+  display: inline-block;
+  float: right;
+  text-decoration-line: underline;
+  margin-top: -30px; /* Adjust the link vertically margin as needed */
+  margin-right: 20px; /* Adjust the link horizontally margin as needed */
+  color:#009e9e
 }
 
-.arrow {
-  display: inline-block;
-  width: 10px;
-  font-size: 20px;
-  font-weight: bold;
+.see-all-link:hover,
+.see-all-link-2:hover {
+  color:#008254
 }
 
 
@@ -499,7 +509,7 @@ section {
 @media screen and (min-width: 468px) {
 
   #best-seller .image-container-2 {
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(4, 1fr);
   }
 
  /* Header */
@@ -558,12 +568,25 @@ section {
     margin-left: calc((100vw - 430px) * 0.05);
     margin-right: calc((100vw - 430px) * 0.05);
   }
+
+  .see-all-link {
+    display: none;
+  
+  
+  }
+  .see-all-link-2 {
+    display: none;
+  }
+
  }
 
 
 @media screen and (min-width: 768px) {
-  /* Styles for screens 768px or more */
 
+  /* Styles for screens 768px or more */
+  #best-seller .image-container-2 {
+    grid-template-columns: repeat(6, 1fr);
+  }
   /* Item Styles */
   .item {
     display: block;
@@ -599,13 +622,14 @@ section {
     box-shadow: none;
   }
 
+
 }
 
-@media (min-width: 1024px) {
+/* @media (min-width: 1024px) {
   #featured-products .carousel-item {
-    flex-basis: calc(25% - 50px); /* Display four items per row */
+    flex-basis: calc(25% - 50px);
   }
-}
+} */
 
 /* Footer */
 
@@ -628,6 +652,7 @@ section {
 
 /* Footer media query for larger screens */
 @media screen and (min-width: 468px) {
+
   .footer-container {
     flex-direction: row; 
     align-items: flex-start; 
