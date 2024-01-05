@@ -309,7 +309,7 @@ section {
 .slick-next {
   position: absolute;
   top: 50%;
-  transform: translateY(-50%);
+  transform: translateY(-85%);
   background-color: transparent;
   border: none;
   padding: 10px;
@@ -455,11 +455,11 @@ section {
 
 
 /* Best Sellers */
-#best-seller .image-container-2 {
+/* #popular-categories .image-container-2 {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   gap: 20px;
-}
+} */
 
 #best-seller .slide {
   background-color: #f9f9f9; /* Optional styling */
@@ -480,7 +480,7 @@ section {
 }
 
 
-#best-seller .image-container-2 {
+#popular-categories .image-container-2 {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   grid-gap: 10px;
@@ -508,7 +508,7 @@ section {
 /* Tablet Menu */
 @media screen and (min-width: 468px) {
 
-  #best-seller .image-container-2 {
+  #popular-categories .image-container-2 {
     grid-template-columns: repeat(4, 1fr);
   }
 
@@ -584,8 +584,8 @@ section {
 @media screen and (min-width: 768px) {
 
   /* Styles for screens 768px or more */
-  #best-seller .image-container-2 {
-    grid-template-columns: repeat(6, 1fr);
+  #popular-categories .image-container-2 {
+    grid-template-columns: repeat(8, 1fr);
   }
   /* Item Styles */
   .item {

@@ -1,72 +1,82 @@
-$(document).ready(function() {
-  // Load header.html into the #header div
-  $("#header").load("header.html", function() {
-    // Toggle the "active" class on the ".item" element(s)
-    $(".toggle").on("click", function() {
+$(document).ready(() => {
+  /* Load header */
+  $("#header").load("header.html", () => {
+    // Toggle menu functionality
+    $(".toggle").on("click", () => {
       $(".item").toggleClass("active");
     });
 
+    // Toggle header secondary section
     const toggleButton = document.getElementById('toggleButton');
     const headerSecondary = document.querySelector('.header-secondary');
-
-    // Add event listener to toggle the .closed class on click
-    toggleButton.addEventListener('click', function(event) {
-      event.preventDefault(); // Prevent the default behavior of the anchor tag
+    toggleButton.addEventListener('click', (event) => {
+      event.preventDefault();
       headerSecondary.classList.toggle('closed');
     });
   });
 
-// Initialize Slick Carousel for featured products
-$('#featured-products .carousel').slick({
-  slidesToShow: 2,
-  slidesToScroll: 1,
-  prevArrow: '<button type="button" class="slick-prev"><i class="fas fa-arrow-left"></i></button>',
-  nextArrow: '<button type="button" class="slick-next"><i class="fas fa-arrow-right"></i></button>',
-  autoplay: true,
-  autoplaySpeed: 2000,
-  responsive: [
-    {
-      breakpoint: 468,
-      settings: {
-        slidesToShow: 1
-      }
-    },
-    {
-      breakpoint: 768,
-      settings: {
-        slidesToShow: 3
-      }
-    }
-  ]
-});
-
-  // Load footer.html into the #footer div
+  /* Load footer */
   $("#footer").load("footer.html");
 
+  /* Image containers and URLs */
+  const imageContainers = [
+    { selector: '.image-container-2 img', imageUrls: ["../images/herbsinbowl.jpg", "../images/herbsinbowl.jpg", "../images/herbsinbowl.jpg"] },
+    { selector: '.image-container img', imageUrls: ["../images/herbsinbowl.jpg", "../images/herbsinbowl.jpg", "../images/herbsinbowl.jpg"] },
+    { selector: '.image-container-3 img', imageUrls: ["../images/herbsinbowl.jpg", "../images/herbsinbowl.jpg", "../images/herbsinbowl.jpg"] }
+  ];
 
-// Common Slick Carousel configuration object
-var commonConfig = {
-  slidesToShow: 2.15,
-  slidesToScroll: 1,
-  prevArrow: '<button type="button" class="slick-prev"><i class="fas fa-arrow-left"></i></button>',
-  nextArrow: '<button type="button" class="slick-next"><i class="fas fa-arrow-right"></i></button>',
-  autoplay: true
-};
+  /* Image URL carousel items */
+  const imageUrlCarouselItems = ["../images/herbsinbowl.jpg", "../images/herbsinbowl.jpg", "../images/herbsinbowl.jpg"];
 
-// Configuration specific to the first carousel
-var carousel1Config = {
-  autoplaySpeed: 4000
-};
+  /* Common configuration for image carousels */
+  const commonConfig = {
+    slidesToShow: 2.15,
+    slidesToScroll: 1,
+    prevArrow: '<button type="button" class="slick-prev"><i class="fas fa-arrow-left"></i></button>',
+    nextArrow: '<button type="button" class="slick-next"><i class="fas fa-arrow-right"></i></button>',
+    autoplay: true,
+    autoplaySpeed: 4000
+  };
 
-// Configuration specific to the second carousel
-var carousel2Config = {
-  autoplaySpeed: 2000
-};
+  /* Set image URLs and alt attributes for each image container */
+  imageContainers.forEach(({ selector, imageUrls }) => {
+    const images = $(selector);
+    images.each((index, image) => {
+      $(image).attr({
+        src: imageUrls[index],
+        alt: `Image ${index + 1}`
+      });
+    });
+  });
 
-// Initialize Slick Carousel for the product category containers
-$('.image-container').slick($.extend({}, commonConfig, carousel1Config));
-$('.image-container-3').slick($.extend({}, commonConfig, carousel2Config));
+  /* Set image URL and text for each imageUrlCarouselItem */
+  const carouselItems = $('.carousel-item');
+  imageUrlCarouselItems.forEach((imageURL, index) => {
+    const carouselItem = carouselItems.eq(index);
+    const image = carouselItem.find('img');
+    const imageName = carouselItem.find('.image-name');
 
+    image.attr({
+      src: imageURL,
+      alt: `Image ${index + 1}`
+    });
 
+    imageName.text(`Image ${index + 1}`);
+  });
+
+  /* Initialize the slick carousels */
+  $('.image-container, .image-container-3').slick(commonConfig);
+
+  $('#featured-products .carousel').slick({
+    slidesToShow: 2,
+    slidesToScroll: 1,
+    prevArrow: '<button type="button" class="slick-prev"><i class="fas fa-arrow-left"></i></button>',
+    nextArrow: '<button type="button" class="slick-next"><i class="fas fa-arrow-right"></i></button>',
+    autoplay: true,
+    autoplaySpeed: 2000,
+    responsive: [
+      { breakpoint: 468, settings: { slidesToShow: 1 } },
+      { breakpoint: 768, settings: { slidesToShow: 3 } }
+    ]
+  });
 });
-
